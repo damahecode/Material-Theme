@@ -8,9 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DCode.Splash">
+        android:theme="@style/Theme.DCode.Material">
+
         <activity
             android:name="com.code.damahe.activity.MainActivity"
+            android:theme="@style/Theme.DCode.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

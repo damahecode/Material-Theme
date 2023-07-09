@@ -14,7 +14,7 @@ dependencyResolutionManagement {
         maven ("https://jitpack.io")
     }
 }
-rootProject.name = "DayNight Theme"
+rootProject.name = "Material Theme"
 include ("app")
-include(":damahecode-res")
-include(":damahecode-theme")
+include(":core:resource")
+include(":material-theme")

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- Module app -->
+    <string name="app_name">Material Theme</string>
+    <string name="txt_preferences">Preferences</string>
+    <string name="txt_github">Github</string>
+
+
+    <!-- Module material-theme -->
+    <string name="ok">OK</string>
+    <string name="title_app_theme">App Theme</string>
+    <string name="loading">Loading…</string>
+    <string name="txt_theme">Theme</string>
+    <string name="brand_default">Default</string>
+    <string name="brand_android">Android</string>
+    <string name="dynamic_color_preference">Use Dynamic Color</string>
+    <string name="dynamic_color_yes">Yes</string>
+    <string name="dynamic_color_no">No</string>
+    <string name="dark_mode_preference">Dark mode preference</string>
+    <string name="dark_mode_config_system_default">System default</string>
+    <string name="dark_mode_config_light">Light</string>
+    <string name="dark_mode_config_dark">Dark</string>
+
+
+</resources>

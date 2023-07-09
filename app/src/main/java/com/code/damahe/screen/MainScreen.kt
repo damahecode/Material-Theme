@@ -41,12 +41,13 @@ import androidx.compose.ui.unit.sp
 import com.code.damahe.res.R
 import com.code.damahe.res.icon.DCodeIcon.ImageVectorIcon
 import com.code.damahe.res.icon.MyIcons
-import com.code.damahe.theme.component.DCodeBackground
-import com.code.damahe.theme.component.DCodeGradientBackground
-import com.code.damahe.theme.dialogs.ThemeDialog
-import com.code.damahe.theme.theme.DCodeAppTheme
-import com.code.damahe.theme.theme.GradientColors
-import com.code.damahe.theme.theme.LocalGradientColors
+import com.code.damahe.material.component.DCodeBackground
+import com.code.damahe.material.component.DCodeGradientBackground
+import com.code.damahe.material.dialogs.ThemeDialog
+import com.code.damahe.material.model.ThemeString
+import com.code.damahe.material.theme.DCodeAppTheme
+import com.code.damahe.material.theme.GradientColors
+import com.code.damahe.material.theme.LocalGradientColors
 
 @OptIn(
     ExperimentalLayoutApi::class,
@@ -62,7 +63,11 @@ fun NavMainScreen() {
 
     if (showThemeSettingsDialog.value) {
         ThemeDialog(
-            onDismiss = { showThemeSettingsDialog.value = false },
+            string = ThemeString(R.string.title_app_theme, R.string.loading, R.string.ok, R.string.brand_default,
+                R.string.brand_android, R.string.dynamic_color_preference, R.string.dynamic_color_yes,
+                R.string.dynamic_color_no, R.string.dark_mode_preference, R.string.dark_mode_config_system_default,
+                R.string.dark_mode_config_light, R.string.dark_mode_config_dark),
+            onDismiss = {showThemeSettingsDialog.value = false},
         )
     }
 
