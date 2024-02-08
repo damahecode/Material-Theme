@@ -37,9 +37,9 @@ A Material Design-based Theme Management System for Android Jetpack Compose.
 ```more features coming soon```
 
 ## Screenshots
-| <img src="/assets/main_screen_light.png" width="200"/> | <img src="/assets/main_screen_dark.png" width="200"/> | <img src="/assets/app_theme_dialog_light.png" width="200"/> | <img src="/assets/app_theme_dialog_dark.png" width="200"/> |
-|--------------------------------------------------------|:-----------------------------------------------------:|:-----------------------------------------------------------:|:----------------------------------------------------------:|
-| Home                                                   |                         Songs                         |                           Albums                            |                          Artists                           |
+| <img src="assets/screenshots/main_screen_light.png" width="200"/> | <img src="assets/screenshots/main_screen_dark.png" width="200"/> | <img src="assets/screenshots/app_theme_dialog_light.png" width="200"/> | <img src="assets/screenshots/app_theme_dialog_dark.png" width="200"/> |
+|:---:|:---:|:---:|:---:|
+| Main Screen Light | Main Screen Dark | Theme Dialog Light | Theme Dialog Dark |
 
 ## Donation
 If this project help you reduce time to develop, you can give me a cup of coffee :)
