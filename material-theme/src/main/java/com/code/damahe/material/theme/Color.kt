@@ -1,6 +1,25 @@
+/*
+ * Copyright (c) 2024 damahecode.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
 package com.code.damahe.material.theme
 
 import androidx.compose.ui.graphics.Color
+import com.code.damahe.material.model.ColorShades
 
 internal val Blue10 = Color(0xFF001F28)
 internal val Blue20 = Color(0xFF003544)
@@ -67,3 +86,78 @@ internal val Teal30 = Color(0xFF214D56)
 internal val Teal40 = Color(0xFF3A656F)
 internal val Teal80 = Color(0xFFA2CED9)
 internal val Teal90 = Color(0xFFBEEAF6)
+
+
+
+
+val White = Color(0xFFFAFAFC)
+val ExtraLightGray = Color(0xFFEBEBF0)
+val LightGray = Color(0xFFCBCBD6)
+val Gray = Color(0xFF74747A)
+val DarkGray = Color(0xFF303033)
+val ExtraDarkGray = Color(0xFF1C1C1F)
+val Black = Color(0xFF09090A)
+
+val Red = ColorShades(
+    extraLight = Color(0xFFF5ABAB),
+    light = Color(0xFFF5AB87),
+    kindaLight = Color(0xFFF56262),
+    primary = Color(0xFFF53D3D),
+    kindaDark = Color(0xFFCC3333),
+    dark = Color(0xFF8F2424),
+    extraDark = Color(0xFF521414),
+)
+val Orange = ColorShades(
+    extraLight = Color(0xFFF5C4AB),
+    light = Color(0xFFF5AB87),
+    kindaLight = Color(0xFFF59362),
+    primary = Color(0xFFF57A3D),
+    kindaDark = Color(0xFFCC6633),
+    dark = Color(0xFF8F4724),
+    extraDark = Color(0xFF522914),
+)
+val Yellow = ColorShades(
+    extraLight = Color(0xFFF5E9AB),
+    light = Color(0xFFF5E287),
+    kindaLight = Color(0xFFF5DC62),
+    primary = Color(0xFFF5D018),
+    kindaDark = Color(0xFFCCAD14),
+    dark = Color(0xFFA38B10),
+    extraDark = Color(0xFF7A680C),
+)
+val Green = ColorShades(
+    extraLight = Color(0xFFABF5DC),
+    light = Color(0xFF5AE0B4),
+    kindaLight = Color(0xFF38E0A8),
+    primary = Color(0xFF12B880),
+    kindaDark = Color(0xFF10A372),
+    dark = Color(0xFF0C7A56),
+    extraDark = Color(0xFF085239),
+)
+val Blue = ColorShades(
+    extraLight = Color(0xFFABD0F5),
+    light = Color(0xFF87BEF5),
+    kindaLight = Color(0xFF62ABF5),
+    primary = Color(0xFF3193F5),
+    kindaDark = Color(0xFF3380CC),
+    dark = Color(0xFF24598F),
+    extraDark = Color(0xFF153352),
+)
+val Purple = ColorShades(
+    extraLight = Color(0xFFB8ABF5),
+    light = Color(0xFF9987F5),
+    kindaLight = Color(0xFF7B62F5),
+    primary = Color(0xFF5C3DF5),
+    kindaDark = Color(0xFF4D33CC),
+    dark = Color(0xFF36248F),
+    extraDark = Color(0xFF1F1452),
+)
+val Pink = ColorShades(
+    extraLight = Color(0xFFF5ABD0),
+    light = Color(0xFFF587BE),
+    kindaLight = Color(0xFFF562AB),
+    primary = Color(0xFFF53D99),
+    kindaDark = Color(0xFFCC3380),
+    dark = Color(0xFF8F2459),
+    extraDark = Color(0xFF521433),
+)
