@@ -27,7 +27,7 @@ A Material Design-based Theme Management System for Android Jetpack Compose.
 - Android Studio Flamingo or later
 
 ## App Demo
-[Google Play Store](https://play.google.com/store/apps/details?id=com.code.damahe.jetpack.compose.ui)
+[Google Play Store](https://play.google.com/store/apps/details?id=com.code.damahe.material)
 
 ## Features
 * Material Design 3 theme and components
