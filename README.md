@@ -20,7 +20,7 @@
 [![MIT License][license-shield]][license-url]
 [![Visitors][visitor-shield]][visitor-url]
 
-# Damahe Code Material Theme
+# Material Theme by Damahe Code
 A Material Design-based Theme Management System for Android Jetpack Compose.
 
 ## Requirements
