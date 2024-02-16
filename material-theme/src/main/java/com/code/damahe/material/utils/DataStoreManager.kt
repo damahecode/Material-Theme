@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) 2024 damahecode.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
 package com.code.damahe.material.utils
 
 import android.content.Context
@@ -20,13 +38,13 @@ class DataStoreManager(private val context: Context) {
     companion object {
         val themeBrandKey = intPreferencesKey(PrefTheme.THEME_BRAND_KEY)
         val darkThemeKey = intPreferencesKey(PrefTheme.DARK_THEME_KEY)
-        val useDynamicColorKey = booleanPreferencesKey(PrefTheme.USE_DYNAMIC_COLOR_KEY)
+        val useGradientColorsKey = booleanPreferencesKey(PrefTheme.USE_GRADIENT_COLORS_KEY)
     }
 
     fun getThemeFromDataStore() = context.datastore.data.map {
         UserEditableTheme(
             themeBrand = when (it[themeBrandKey]) {
-                PrefTheme.THEME_BRAND_ANDROID -> ThemeBrand.ANDROID
+                PrefTheme.THEME_BRAND_DYNAMIC -> ThemeBrand.DYNAMIC
                 else -> ThemeBrand.DEFAULT
             },
             darkThemeConfig = when (it[darkThemeKey]) {
@@ -34,14 +52,14 @@ class DataStoreManager(private val context: Context) {
                 PrefTheme.DARK_THEME_DARK -> DarkThemeConfig.DARK
                 else -> DarkThemeConfig.FOLLOW_SYSTEM
             },
-            useDynamicColor = it[useDynamicColorKey] ?: false
+            useGradientColors = it[useGradientColorsKey] ?: true
         )
     }
 
     suspend fun saveThemeBrandDataStore(themeBrand: ThemeBrand) {
         context.datastore.edit {
             it[themeBrandKey] = when (themeBrand) {
-                ThemeBrand.ANDROID -> PrefTheme.THEME_BRAND_ANDROID
+                ThemeBrand.DYNAMIC -> PrefTheme.THEME_BRAND_DYNAMIC
                 else -> PrefTheme.THEME_BRAND_DEFAULT
             }
         }
@@ -57,9 +75,9 @@ class DataStoreManager(private val context: Context) {
         }
     }
 
-    suspend fun saveDynamicColorPreferenceDataStore(useDynamicColor: Boolean) {
+    suspend fun saveGradientColorsPreferenceDataStore(useGradientColors: Boolean) {
         context.datastore.edit {
-            it[useDynamicColorKey] = useDynamicColor
+            it[useGradientColorsKey] = useGradientColors
         }
     }
 

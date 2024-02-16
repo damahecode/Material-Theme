@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!--
+  ~ Copyright (c) 2024 damahecode.
+  ~
+  ~ This program is free software; you can redistribute it and/or
+  ~ modify it under the terms of the GNU General Public License
+  ~ as published by the Free Software Foundation; either version 2
+  ~ of the License, or (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program; if not, write to the Free Software
+  ~ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+  -->
+
 <resources>
     <!-- Module app -->
     <string name="app_name">Material Theme</string>
@@ -13,10 +31,10 @@
     <string name="loading">Loading…</string>
     <string name="txt_theme">Theme</string>
     <string name="brand_default">Default</string>
-    <string name="brand_android">Android</string>
-    <string name="dynamic_color_preference">Use Dynamic Color</string>
-    <string name="dynamic_color_yes">Yes</string>
-    <string name="dynamic_color_no">No</string>
+    <string name="brand_dynamic">Dynamic</string>
+    <string name="gradient_colors_preference">Use gradient colors</string>
+    <string name="gradient_colors_yes">Yes</string>
+    <string name="gradient_colors_no">No</string>
     <string name="dark_mode_preference">Dark mode preference</string>
     <string name="dark_mode_config_system_default">System default</string>
     <string name="dark_mode_config_light">Light</string>

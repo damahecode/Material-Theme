@@ -21,93 +21,85 @@ package com.code.damahe.material.theme
 import androidx.compose.ui.graphics.Color
 import com.code.damahe.material.model.ColorShades
 
-internal val Blue10 = Color(0xFF001F28)
-internal val Blue20 = Color(0xFF003544)
-internal val Blue30 = Color(0xFF004D61)
-internal val Blue40 = Color(0xFF006780)
-internal val Blue80 = Color(0xFF5DD5FC)
-internal val Blue90 = Color(0xFFB8EAFF)
-internal val Blue95 = Color(0xFFDDF4FF)
-internal val DarkGreen10 = Color(0xFF0D1F12)
-internal val DarkGreen20 = Color(0xFF223526)
-internal val DarkGreen30 = Color(0xFF394B3C)
-internal val DarkGreen40 = Color(0xFF4F6352)
-internal val DarkGreen80 = Color(0xFFB7CCB8)
-internal val DarkGreen90 = Color(0xFFD3E8D3)
-internal val DarkGreenGray10 = Color(0xFF1A1C1A)
-internal val DarkGreenGray20 = Color(0xFF2F312E)
-internal val DarkGreenGray90 = Color(0xFFE2E3DE)
-internal val DarkGreenGray95 = Color(0xFFF0F1EC)
-internal val DarkGreenGray99 = Color(0xFFFBFDF7)
-internal val DarkPurpleGray10 = Color(0xFF201A1B)
-internal val DarkPurpleGray20 = Color(0xFF362F30)
-internal val DarkPurpleGray90 = Color(0xFFECDFE0)
-internal val DarkPurpleGray95 = Color(0xFFFAEEEF)
-internal val DarkPurpleGray99 = Color(0xFFFCFCFC)
-internal val Green10 = Color(0xFF00210B)
-internal val Green20 = Color(0xFF003919)
-internal val Green30 = Color(0xFF005227)
-internal val Green40 = Color(0xFF006D36)
-internal val Green80 = Color(0xFF0EE37C)
-internal val Green90 = Color(0xFF5AFF9D)
-internal val GreenGray30 = Color(0xFF414941)
-internal val GreenGray50 = Color(0xFF727971)
-internal val GreenGray60 = Color(0xFF8B938A)
-internal val GreenGray80 = Color(0xFFC1C9BF)
-internal val GreenGray90 = Color(0xFFDDE5DB)
-internal val Orange10 = Color(0xFF380D00)
-internal val Orange20 = Color(0xFF5B1A00)
-internal val Orange30 = Color(0xFF812800)
-internal val Orange40 = Color(0xFFA23F16)
-internal val Orange80 = Color(0xFFFFB59B)
-internal val Orange90 = Color(0xFFFFDBCF)
-internal val Orange95 = Color(0xFFFFEDE8)
-internal val Purple10 = Color(0xFF36003C)
-internal val Purple20 = Color(0xFF560A5D)
-internal val Purple30 = Color(0xFF702776)
-internal val Purple40 = Color(0xFF8B418F)
-internal val Purple80 = Color(0xFFFFA9FE)
-internal val Purple90 = Color(0xFFFFD6FA)
-internal val Purple95 = Color(0xFFFFEBFA)
-internal val PurpleGray30 = Color(0xFF4D444C)
-internal val PurpleGray50 = Color(0xFF7F747C)
-internal val PurpleGray60 = Color(0xFF998D96)
-internal val PurpleGray80 = Color(0xFFD0C3CC)
-internal val PurpleGray90 = Color(0xFFEDDEE8)
-internal val Red10 = Color(0xFF410002)
-internal val Red20 = Color(0xFF690005)
-internal val Red30 = Color(0xFF93000A)
-internal val Red40 = Color(0xFFBA1A1A)
-internal val Red80 = Color(0xFFFFB4AB)
-internal val Red90 = Color(0xFFFFDAD6)
-internal val Teal10 = Color(0xFF001F26)
-internal val Teal20 = Color(0xFF02363F)
-internal val Teal30 = Color(0xFF214D56)
-internal val Teal40 = Color(0xFF3A656F)
-internal val Teal80 = Color(0xFFA2CED9)
-internal val Teal90 = Color(0xFFBEEAF6)
+val light_primary = Color(0xFF6750A4)
+val light_onPrimary = Color(0xFFFFFFFF)
+val light_primaryContainer = Color(0xFFEADDFF)
+val light_onPrimaryContainer = Color(0xFF21005D)
+val light_secondary = Color(0xFF625B71)
+val light_onSecondary = Color(0xFFFFFFFF)
+val light_secondaryContainer = Color(0xFFE8DEF8)
+val light_onSecondaryContainer = Color(0xFF1D192B)
+val light_tertiary = Color(0xFF7D5260)
+val light_onTertiary = Color(0xFFFFFFFF)
+val light_tertiaryContainer = Color(0xFFFFD8E4)
+val light_onTertiaryContainer = Color(0xFF31111D)
+val light_error = Color(0xFFB3261E)
+val light_onError = Color(0xFFFFFFFF)
+val light_errorContainer = Color(0xFFF9DEDC)
+val light_onErrorContainer = Color(0xFF410E0B)
+val light_outline = Color(0xFF79747E)
+val light_background = Color(0xFFFFFBFE)
+val light_onBackground = Color(0xFF1C1B1F)
+val light_surface = Color(0xFFFFFBFE)
+val light_onSurface = Color(0xFF1C1B1F)
+val light_surfaceVariant = Color(0xFFE7E0EC)
+val light_onSurfaceVariant = Color(0xFF49454F)
+val light_inverseSurface = Color(0xFF313033)
+val light_inverseOnSurface = Color(0xFFF4EFF4)
+val light_inversePrimary = Color(0xFFD0BCFF)
+val light_shadow = Color(0xFF000000)
+val light_surfaceTint = Color(0xFF6750A4)
+val light_outlineVariant = Color(0xFFCAC4D0)
+val light_scrim = Color(0xFF000000)
+
+val dark_primary = Color(0xFFD0BCFF)
+val dark_onPrimary = Color(0xFF381E72)
+val dark_primaryContainer = Color(0xFF4F378B)
+val dark_onPrimaryContainer = Color(0xFFEADDFF)
+val dark_secondary = Color(0xFFCCC2DC)
+val dark_onSecondary = Color(0xFF332D41)
+val dark_secondaryContainer = Color(0xFF4A4458)
+val dark_onSecondaryContainer = Color(0xFFE8DEF8)
+val dark_tertiary = Color(0xFFEFB8C8)
+val dark_onTertiary = Color(0xFF492532)
+val dark_tertiaryContainer = Color(0xFF633B48)
+val dark_onTertiaryContainer = Color(0xFFFFD8E4)
+val dark_error = Color(0xFFF2B8B5)
+val dark_onError = Color(0xFF601410)
+val dark_errorContainer = Color(0xFF8C1D18)
+val dark_onErrorContainer = Color(0xFFF9DEDC)
+val dark_outline = Color(0xFF938F99)
+val dark_background = Color(0xFF1C1B1F)
+val dark_onBackground = Color(0xFFE6E1E5)
+val dark_surface = Color(0xFF1C1B1F)
+val dark_onSurface = Color(0xFFE6E1E5)
+val dark_surfaceVariant = Color(0xFF49454F)
+val dark_onSurfaceVariant = Color(0xFFCAC4D0)
+val dark_inverseSurface = Color(0xFFE6E1E5)
+val dark_inverseOnSurface = Color(0xFF313033)
+val dark_inversePrimary = Color(0xFF6750A4)
+val dark_shadow = Color(0xFF000000)
+val dark_surfaceTint = Color(0xFFD0BCFF)
+val dark_outlineVariant = Color(0xFF49454F)
+val dark_scrim = Color(0xFF000000)
 
 
 
+// under development
+internal val White = Color(0xFFFAFAFC)
+internal val Black = Color(0xFF09090A)
 
-val White = Color(0xFFFAFAFC)
-val ExtraLightGray = Color(0xFFEBEBF0)
-val LightGray = Color(0xFFCBCBD6)
-val Gray = Color(0xFF74747A)
-val DarkGray = Color(0xFF303033)
-val ExtraDarkGray = Color(0xFF1C1C1F)
-val Black = Color(0xFF09090A)
-
-val Red = ColorShades(
-    extraLight = Color(0xFFF5ABAB),
-    light = Color(0xFFF5AB87),
-    kindaLight = Color(0xFFF56262),
-    primary = Color(0xFFF53D3D),
-    kindaDark = Color(0xFFCC3333),
-    dark = Color(0xFF8F2424),
-    extraDark = Color(0xFF521414),
+internal val Gray = ColorShades(
+    extraLight = Color(0xFFEBEBF0),
+    light = Color(0xFFCBCBD6),
+    kindaLight = Color(0xFFA0A0A7),
+    primary = Color(0xFF74747A),
+    kindaDark = Color(0xFF515155),
+    dark = Color(0xFF303033),
+    extraDark = Color(0xFF1C1C1F),
 )
-val Orange = ColorShades(
+
+internal val Orange = ColorShades(
     extraLight = Color(0xFFF5C4AB),
     light = Color(0xFFF5AB87),
     kindaLight = Color(0xFFF59362),
@@ -116,7 +108,28 @@ val Orange = ColorShades(
     dark = Color(0xFF8F4724),
     extraDark = Color(0xFF522914),
 )
-val Yellow = ColorShades(
+
+internal val Purple = ColorShades(
+    extraLight = Color(0xFFC6BCF5),
+    light = Color(0xFF9987F5),
+    kindaLight = Color(0xFF7B62F5),
+    primary = Color(0xFF5C3DF5),
+    kindaDark = Color(0xFF4D33CC),
+    dark = Color(0xFF36248F),
+    extraDark = Color(0xFF1F1452),
+)
+
+internal val Red = ColorShades(
+    extraLight = Color(0xFFF5ABAB),
+    light = Color(0xFFF5AB87),
+    kindaLight = Color(0xFFF56262),
+    primary = Color(0xFFF53D3D),
+    kindaDark = Color(0xFFCC3333),
+    dark = Color(0xFF8F2424),
+    extraDark = Color(0xFF521414),
+)
+
+internal val Yellow = ColorShades(
     extraLight = Color(0xFFF5E9AB),
     light = Color(0xFFF5E287),
     kindaLight = Color(0xFFF5DC62),
@@ -125,7 +138,8 @@ val Yellow = ColorShades(
     dark = Color(0xFFA38B10),
     extraDark = Color(0xFF7A680C),
 )
-val Green = ColorShades(
+
+internal val Green = ColorShades(
     extraLight = Color(0xFFABF5DC),
     light = Color(0xFF5AE0B4),
     kindaLight = Color(0xFF38E0A8),
@@ -134,7 +148,8 @@ val Green = ColorShades(
     dark = Color(0xFF0C7A56),
     extraDark = Color(0xFF085239),
 )
-val Blue = ColorShades(
+
+internal val Blue = ColorShades(
     extraLight = Color(0xFFABD0F5),
     light = Color(0xFF87BEF5),
     kindaLight = Color(0xFF62ABF5),
@@ -143,16 +158,8 @@ val Blue = ColorShades(
     dark = Color(0xFF24598F),
     extraDark = Color(0xFF153352),
 )
-val Purple = ColorShades(
-    extraLight = Color(0xFFB8ABF5),
-    light = Color(0xFF9987F5),
-    kindaLight = Color(0xFF7B62F5),
-    primary = Color(0xFF5C3DF5),
-    kindaDark = Color(0xFF4D33CC),
-    dark = Color(0xFF36248F),
-    extraDark = Color(0xFF1F1452),
-)
-val Pink = ColorShades(
+
+internal val Pink = ColorShades(
     extraLight = Color(0xFFF5ABD0),
     light = Color(0xFFF587BE),
     kindaLight = Color(0xFFF562AB),

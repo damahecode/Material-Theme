@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) 2024 damahecode.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
 package com.code.damahe.material.dialogs
 
 import androidx.compose.foundation.clickable
@@ -48,7 +66,7 @@ fun ThemeDialog(
         onDismiss = onDismiss,
         themeUiState = themeUiState,
         onChangeThemeBrand = viewModel::updateThemeBrand,
-        onChangeDynamicColorPreference = viewModel::updateDynamicColorPreference,
+        onChangeGradientColorsPreference = viewModel::updateGradientColorsPreference,
         onChangeDarkThemeConfig = viewModel::updateDarkThemeConfig,
     )
 }
@@ -60,7 +78,7 @@ fun ThemeDialog(
     supportDynamicColor: Boolean = supportsDynamicTheming(),
     onDismiss: () -> Unit,
     onChangeThemeBrand: (themeBrand: ThemeBrand) -> Unit,
-    onChangeDynamicColorPreference: (useDynamicColor: Boolean) -> Unit,
+    onChangeGradientColorsPreference: (useGradientColors: Boolean) -> Unit,
     onChangeDarkThemeConfig: (darkThemeConfig: DarkThemeConfig) -> Unit,
 ) {
     val configuration = LocalConfiguration.current
@@ -91,7 +109,7 @@ fun ThemeDialog(
                             theme = themeUiState.theme,
                             supportDynamicColor = supportDynamicColor,
                             onChangeThemeBrand = onChangeThemeBrand,
-                            onChangeDynamicColorPreference = onChangeDynamicColorPreference,
+                            onChangeGradientColorsPreference = onChangeGradientColorsPreference,
                             onChangeDarkThemeConfig = onChangeDarkThemeConfig,
                         )
                     }
@@ -120,36 +138,35 @@ private fun ThemePanel(
     theme: UserEditableTheme,
     supportDynamicColor: Boolean,
     onChangeThemeBrand: (themeBrand: ThemeBrand) -> Unit,
-    onChangeDynamicColorPreference: (useDynamicColor: Boolean) -> Unit,
+    onChangeGradientColorsPreference: (useGradientColors: Boolean) -> Unit,
     onChangeDarkThemeConfig: (darkThemeConfig: DarkThemeConfig) -> Unit,
 ) {
-    //ThemeDialogSectionTitle(text = stringResource(R.string.txt_theme))
     Column(Modifier.selectableGroup()) {
         DialogThemeChooserRow(
             text = stringResource(string.brandDefault),
             selected = theme.themeBrand == ThemeBrand.DEFAULT,
             onClick = { onChangeThemeBrand(ThemeBrand.DEFAULT) },
         )
-        DialogThemeChooserRow(
-            text = stringResource(string.brandAndroid),
-            selected = theme.themeBrand == ThemeBrand.ANDROID,
-            onClick = { onChangeThemeBrand(ThemeBrand.ANDROID) },
-        )
-    }
-    if (theme.themeBrand == ThemeBrand.DEFAULT && supportDynamicColor) {
-        ThemeDialogSectionTitle(text = stringResource(string.useDynamicColor))
-        Column(Modifier.selectableGroup()) {
+        if (supportDynamicColor) {
             DialogThemeChooserRow(
-                text = stringResource(string.yes),
-                selected = theme.useDynamicColor,
-                onClick = { onChangeDynamicColorPreference(true) },
-            )
-            DialogThemeChooserRow(
-                text = stringResource(string.no),
-                selected = !theme.useDynamicColor,
-                onClick = { onChangeDynamicColorPreference(false) },
+                text = stringResource(string.brandDynamic),
+                selected = theme.themeBrand == ThemeBrand.DYNAMIC,
+                onClick = { onChangeThemeBrand(ThemeBrand.DYNAMIC) },
             )
         }
+    }
+    ThemeDialogSectionTitle(text = stringResource(string.useGradientColors))
+    Column(Modifier.selectableGroup()) {
+        DialogThemeChooserRow(
+            text = stringResource(string.yes),
+            selected = theme.useGradientColors,
+            onClick = { onChangeGradientColorsPreference(true) },
+        )
+        DialogThemeChooserRow(
+            text = stringResource(string.no),
+            selected = !theme.useGradientColors,
+            onClick = { onChangeGradientColorsPreference(false) },
+        )
     }
     ThemeDialogSectionTitle(text = stringResource(string.darkModePreference))
     Column(Modifier.selectableGroup()) {

@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) 2024 damahecode.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
 package com.code.damahe.material.utils
 
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -11,28 +29,25 @@ import com.code.damahe.material.viewmodel.ThemeUiState
 object ThemeUtil {
 
     /**
-     * Returns `true` if the Android theme should be used, as a function of the [themeUiState].
+     * Returns `ThemeBrand` if the Other theme should be used, as a function of the [themeUiState].
      */
     @Composable
-    fun shouldUseAndroidTheme(
+    fun shouldUseOtherThemeBrand(
         themeUiState: ThemeUiState,
-    ): Boolean = when (themeUiState) {
-        Loading -> false
-        is Success -> when (themeUiState.theme.themeBrand) {
-            ThemeBrand.DEFAULT -> false
-            ThemeBrand.ANDROID -> true
-        }
+    ): ThemeBrand = when (themeUiState) {
+        Loading -> ThemeBrand.DEFAULT
+        is Success -> themeUiState.theme.themeBrand
     }
 
     /**
-     * Returns `true` if the dynamic color is disabled, as a function of the [themeUiState].
+     * Returns `true` if the Gradient colors is disabled, as a function of the [themeUiState].
      */
     @Composable
-    fun shouldDisableDynamicTheming(
+    fun shouldDisableGradientColors(
         themeUiState: ThemeUiState,
     ): Boolean = when (themeUiState) {
         Loading -> false
-        is Success -> !themeUiState.theme.useDynamicColor
+        is Success -> !themeUiState.theme.useGradientColors
     }
 
     /**

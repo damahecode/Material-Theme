@@ -1,51 +1,38 @@
+/*
+ * Copyright (c) 2024 damahecode.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
 package com.code.damahe.activity
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
-import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
-import com.code.damahe.material.theme.DCodeAppTheme
-import com.code.damahe.material.utils.ThemeUtil
-import com.code.damahe.material.viewmodel.ThemeViewModel
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.code.damahe.app.Activity
+import com.code.damahe.app.MainContent
 import com.code.damahe.material.viewmodel.ThemeUiState.Loading
 import com.code.damahe.material.viewmodel.ThemeUiState.Success
-import com.code.damahe.material.viewmodel.ThemeUiState
 import com.code.damahe.screen.NavMainScreen
-import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 
-@AndroidEntryPoint
-class MainActivity : ComponentActivity() {
-
-    private val viewModel: ThemeViewModel by viewModels()
+class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
-
-        var themeUiState: ThemeUiState by mutableStateOf(Loading)
-
-        // Update the uiState
-        lifecycleScope.launch {
-            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.themeUiState.onEach {
-                    themeUiState = it
-                    }
-                    .collect()
-            }
-        }
 
         // Keep the splash screen on-screen until the UI state is loaded. This condition is
         // evaluated each time the app needs to be redrawn so it should be fast to avoid blocking
@@ -54,6 +41,7 @@ class MainActivity : ComponentActivity() {
             when (themeUiState) {
                 Loading -> true
                 is Success -> false
+                else -> false
             }
         }
 
@@ -62,20 +50,7 @@ class MainActivity : ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         setContent {
-            val systemUiController = rememberSystemUiController()
-            val darkTheme = ThemeUtil.shouldUseDarkTheme(themeUiState)
-
-            // Update the dark content of the system bars to match the theme
-            DisposableEffect(systemUiController, darkTheme) {
-                systemUiController.systemBarsDarkContentEnabled = !darkTheme
-                onDispose {}
-            }
-
-            DCodeAppTheme(
-                darkTheme = darkTheme,
-                androidTheme = ThemeUtil.shouldUseAndroidTheme(themeUiState),
-                disableDynamicTheming = ThemeUtil.shouldDisableDynamicTheming(themeUiState),
-            ) {
+            MainContent(themeUiState = themeUiState) {
                 NavMainScreen()
             }
         }
@@ -83,3 +58,12 @@ class MainActivity : ComponentActivity() {
 }
 
 
+//@Preview(
+//    showSystemUi = true,
+//    uiMode = Configuration.UI_MODE_NIGHT_NO,
+//    showBackground = true,
+//)
+//@Composable
+//fun PreviewScreen() {
+//
+//}
