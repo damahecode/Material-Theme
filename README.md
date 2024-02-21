@@ -10,15 +10,12 @@
 [issues-url]: https://github.com/damahecode/DayNight-Theme/issues
 [license-shield]: https://img.shields.io/github/license/damahecode/DayNight-Theme.svg?style=for-the-badge
 [license-url]: https://github.com/damahecode/DayNight-Theme/blob/master/LICENSE
-[visitor-shield]: https://komarev.com/ghpvc/?username=damahecode&label=Visitors&style=for-the-badge
-[visitor-url]: https://github.com/damahecode/
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![Visitors][visitor-shield]][visitor-url]
 
 # Material Theme by Damahe Code
 A Material Design-based Theme Management System for Android Jetpack Compose.
@@ -41,10 +38,6 @@ A Material Design-based Theme Management System for Android Jetpack Compose.
 |:---:|:---:|:---:|:---:|
 | Main Screen Light | Main Screen Dark | Theme Dialog Light | Theme Dialog Dark |
 
-## Donation
-If this project help you reduce time to develop, you can give me a cup of coffee :)
-
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://damahecode.blogspot.com/2023/07/donate-to-damahe-code.html)
 
 
 
