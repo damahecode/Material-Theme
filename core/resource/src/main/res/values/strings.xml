@@ -39,6 +39,8 @@
     <string name="dark_mode_config_system_default">System default</string>
     <string name="dark_mode_config_light">Light</string>
     <string name="dark_mode_config_dark">Dark</string>
+    <string name="txt_material_theme">Material Theme</string>
+    <string name="txt_Damahe_Code">Damahe Code</string>
 
 
 </resources>

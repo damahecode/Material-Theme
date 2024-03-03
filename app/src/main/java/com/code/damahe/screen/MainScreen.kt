@@ -84,7 +84,7 @@ fun NavMainScreen() {
             string = ThemeString(R.string.title_app_theme, R.string.loading, R.string.ok, R.string.brand_default,
                 R.string.brand_dynamic, R.string.gradient_colors_preference, R.string.gradient_colors_yes,
                 R.string.gradient_colors_no, R.string.dark_mode_preference, R.string.dark_mode_config_system_default,
-                R.string.dark_mode_config_light, R.string.dark_mode_config_dark),
+                R.string.dark_mode_config_light, R.string.dark_mode_config_dark, R.string.txt_material_theme, R.string.txt_Damahe_Code),
             onDismiss = {showThemeSettingsDialog.value = false},
         )
     }

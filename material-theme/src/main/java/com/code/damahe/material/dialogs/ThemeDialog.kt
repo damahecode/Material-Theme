@@ -23,6 +23,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
@@ -40,6 +41,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
@@ -48,6 +50,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.code.damahe.material.config.DarkThemeConfig
 import com.code.damahe.material.config.ThemeBrand
+import com.code.damahe.material.config.ThemeConfig.PrefTheme.DAMAHECODE_GITHUB
+import com.code.damahe.material.config.ThemeConfig.PrefTheme.MATERIAL_THEME_GITHUB
 import com.code.damahe.material.model.ThemeString
 import com.code.damahe.material.model.UserEditableTheme
 import com.code.damahe.material.theme.supportsDynamicTheming
@@ -115,7 +119,7 @@ fun ThemeDialog(
                     }
                 }
                 Divider(Modifier.padding(top = 8.dp))
-                //LinksPanel()
+                LinksPanel(string)
             }
             //TrackScreenViewEvent(screenName = "Settings")
         },
@@ -221,4 +225,42 @@ fun DialogThemeChooserRow(
         Spacer(Modifier.width(8.dp))
         Text(text)
     }
+}
+
+@Composable
+private fun LinksPanel(string: ThemeString) {
+    Row(
+        modifier = Modifier.padding(top = 16.dp),
+    ) {
+        Column(
+            Modifier.fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            Row {
+                TextLink(
+                    text = stringResource(string.materialTheme),
+                    url = MATERIAL_THEME_GITHUB,
+                )
+                Spacer(Modifier.width(16.dp))
+                TextLink(
+                    text = stringResource(string.damahecode),
+                    url = DAMAHECODE_GITHUB,
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun TextLink(text: String, url: String) {
+    val uriHandler = LocalUriHandler.current
+
+    Text(
+        text = text,
+        style = MaterialTheme.typography.labelLarge,
+        color = MaterialTheme.colorScheme.primary,
+        modifier = Modifier
+            .padding(vertical = 8.dp)
+            .clickable { uriHandler.openUri(url) },
+    )
 }

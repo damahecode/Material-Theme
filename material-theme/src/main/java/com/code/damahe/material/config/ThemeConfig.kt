@@ -41,5 +41,8 @@ object ThemeConfig {
         const val DARK_THEME_FOLLOW_SYSTEM = 0
         const val DARK_THEME_LIGHT = 1
         const val DARK_THEME_DARK = 2
+
+        const val MATERIAL_THEME_GITHUB = "https://github.com/damahecode/Material-Theme"
+        const val DAMAHECODE_GITHUB = "https://github.com/damahecode"
     }
 }
