@@ -137,7 +137,7 @@ fun DCodeGradientBackground(
 }
 
 /**
- * A class to model background color and tonal elevation values for Damahe Code.
+ * A class to model background color and tonal elevation values for Material Theme.
  */
 @Immutable
 data class BackgroundTheme(

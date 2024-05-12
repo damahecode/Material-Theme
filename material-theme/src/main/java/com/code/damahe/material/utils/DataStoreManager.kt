@@ -25,9 +25,9 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
-import com.code.damahe.material.config.ThemeConfig.PrefTheme
-import com.code.damahe.material.config.DarkThemeConfig
-import com.code.damahe.material.config.ThemeBrand
+import com.code.damahe.material.app.ThemeConfig.PrefTheme
+import com.code.damahe.material.app.DarkThemeConfig
+import com.code.damahe.material.app.ThemeBrand
 import com.code.damahe.material.model.UserEditableTheme
 import kotlinx.coroutines.flow.map
 

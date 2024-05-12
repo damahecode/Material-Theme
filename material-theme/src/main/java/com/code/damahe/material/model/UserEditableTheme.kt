@@ -18,8 +18,8 @@
 
 package com.code.damahe.material.model
 
-import com.code.damahe.material.config.DarkThemeConfig
-import com.code.damahe.material.config.ThemeBrand
+import com.code.damahe.material.app.DarkThemeConfig
+import com.code.damahe.material.app.ThemeBrand
 
 /**
  * Represents the settings which the user can edit within the app.

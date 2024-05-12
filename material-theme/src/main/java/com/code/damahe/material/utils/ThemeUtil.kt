@@ -20,8 +20,8 @@ package com.code.damahe.material.utils
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
-import com.code.damahe.material.config.DarkThemeConfig
-import com.code.damahe.material.config.ThemeBrand
+import com.code.damahe.material.app.DarkThemeConfig
+import com.code.damahe.material.app.ThemeBrand
 import com.code.damahe.material.viewmodel.ThemeUiState.Loading
 import com.code.damahe.material.viewmodel.ThemeUiState.Success
 import com.code.damahe.material.viewmodel.ThemeUiState

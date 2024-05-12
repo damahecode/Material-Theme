@@ -20,11 +20,12 @@ package com.code.damahe.material.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.code.damahe.material.config.DarkThemeConfig
-import com.code.damahe.material.config.ThemeBrand
+import com.code.damahe.material.app.DarkThemeConfig
+import com.code.damahe.material.app.ThemeBrand
 import com.code.damahe.material.data.ThemeDataRepository
 import com.code.damahe.material.model.UserEditableTheme
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
@@ -46,25 +47,25 @@ class ThemeViewModel @Inject constructor(
     )
 
     fun updateThemeBrand(themeBrand: ThemeBrand) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             themeDataRepository.setThemeBrand(themeBrand)
         }
     }
 
     fun updateDarkThemeConfig(darkThemeConfig: DarkThemeConfig) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             themeDataRepository.setDarkThemeConfig(darkThemeConfig)
         }
     }
 
     fun updateGradientColorsPreference(useGradientColors: Boolean) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             themeDataRepository.setGradientColorsPreference(useGradientColors)
         }
     }
 }
 
 sealed interface ThemeUiState {
-    object Loading : ThemeUiState
+    data object Loading : ThemeUiState
     data class Success(val theme: UserEditableTheme) : ThemeUiState
 }

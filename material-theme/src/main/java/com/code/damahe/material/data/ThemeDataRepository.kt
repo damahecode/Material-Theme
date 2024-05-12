@@ -19,8 +19,8 @@
 package com.code.damahe.material.data
 
 import android.content.Context
-import com.code.damahe.material.config.DarkThemeConfig
-import com.code.damahe.material.config.ThemeBrand
+import com.code.damahe.material.app.DarkThemeConfig
+import com.code.damahe.material.app.ThemeBrand
 import com.code.damahe.material.utils.DataStoreManager
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject

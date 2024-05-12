@@ -19,152 +19,78 @@
 package com.code.damahe.material.theme
 
 import androidx.compose.ui.graphics.Color
-import com.code.damahe.material.model.ColorShades
 
-val light_primary = Color(0xFF6750A4)
-val light_onPrimary = Color(0xFFFFFFFF)
-val light_primaryContainer = Color(0xFFEADDFF)
-val light_onPrimaryContainer = Color(0xFF21005D)
-val light_secondary = Color(0xFF625B71)
-val light_onSecondary = Color(0xFFFFFFFF)
-val light_secondaryContainer = Color(0xFFE8DEF8)
-val light_onSecondaryContainer = Color(0xFF1D192B)
-val light_tertiary = Color(0xFF7D5260)
-val light_onTertiary = Color(0xFFFFFFFF)
-val light_tertiaryContainer = Color(0xFFFFD8E4)
-val light_onTertiaryContainer = Color(0xFF31111D)
-val light_error = Color(0xFFB3261E)
-val light_onError = Color(0xFFFFFFFF)
-val light_errorContainer = Color(0xFFF9DEDC)
-val light_onErrorContainer = Color(0xFF410E0B)
-val light_outline = Color(0xFF79747E)
-val light_background = Color(0xFFFFFBFE)
-val light_onBackground = Color(0xFF1C1B1F)
-val light_surface = Color(0xFFFFFBFE)
-val light_onSurface = Color(0xFF1C1B1F)
-val light_surfaceVariant = Color(0xFFE7E0EC)
-val light_onSurfaceVariant = Color(0xFF49454F)
-val light_inverseSurface = Color(0xFF313033)
-val light_inverseOnSurface = Color(0xFFF4EFF4)
-val light_inversePrimary = Color(0xFFD0BCFF)
-val light_shadow = Color(0xFF000000)
-val light_surfaceTint = Color(0xFF6750A4)
-val light_outlineVariant = Color(0xFFCAC4D0)
-val light_scrim = Color(0xFF000000)
-
-val dark_primary = Color(0xFFD0BCFF)
-val dark_onPrimary = Color(0xFF381E72)
-val dark_primaryContainer = Color(0xFF4F378B)
-val dark_onPrimaryContainer = Color(0xFFEADDFF)
-val dark_secondary = Color(0xFFCCC2DC)
-val dark_onSecondary = Color(0xFF332D41)
-val dark_secondaryContainer = Color(0xFF4A4458)
-val dark_onSecondaryContainer = Color(0xFFE8DEF8)
-val dark_tertiary = Color(0xFFEFB8C8)
-val dark_onTertiary = Color(0xFF492532)
-val dark_tertiaryContainer = Color(0xFF633B48)
-val dark_onTertiaryContainer = Color(0xFFFFD8E4)
-val dark_error = Color(0xFFF2B8B5)
-val dark_onError = Color(0xFF601410)
-val dark_errorContainer = Color(0xFF8C1D18)
-val dark_onErrorContainer = Color(0xFFF9DEDC)
-val dark_outline = Color(0xFF938F99)
-val dark_background = Color(0xFF1C1B1F)
-val dark_onBackground = Color(0xFFE6E1E5)
-val dark_surface = Color(0xFF1C1B1F)
-val dark_onSurface = Color(0xFFE6E1E5)
-val dark_surfaceVariant = Color(0xFF49454F)
-val dark_onSurfaceVariant = Color(0xFFCAC4D0)
-val dark_inverseSurface = Color(0xFFE6E1E5)
-val dark_inverseOnSurface = Color(0xFF313033)
-val dark_inversePrimary = Color(0xFF6750A4)
-val dark_shadow = Color(0xFF000000)
-val dark_surfaceTint = Color(0xFFD0BCFF)
-val dark_outlineVariant = Color(0xFF49454F)
-val dark_scrim = Color(0xFF000000)
+val primaryLight = Color(0xFF415F91)
+val onPrimaryLight = Color(0xFFFFFFFF)
+val primaryContainerLight = Color(0xFFD6E3FF)
+val onPrimaryContainerLight = Color(0xFF001B3E)
+val secondaryLight = Color(0xFF565F71)
+val onSecondaryLight = Color(0xFFFFFFFF)
+val secondaryContainerLight = Color(0xFFDAE2F9)
+val onSecondaryContainerLight = Color(0xFF131C2B)
+val tertiaryLight = Color(0xFF705575)
+val onTertiaryLight = Color(0xFFFFFFFF)
+val tertiaryContainerLight = Color(0xFFFAD8FD)
+val onTertiaryContainerLight = Color(0xFF28132E)
+val errorLight = Color(0xFFBA1A1A)
+val onErrorLight = Color(0xFFFFFFFF)
+val errorContainerLight = Color(0xFFFFDAD6)
+val onErrorContainerLight = Color(0xFF410002)
+val backgroundLight = Color(0xFFF9F9FF)
+val onBackgroundLight = Color(0xFF191C20)
+val surfaceLight = Color(0xFFF9F9FF)
+val onSurfaceLight = Color(0xFF191C20)
+val surfaceVariantLight = Color(0xFFE0E2EC)
+val onSurfaceVariantLight = Color(0xFF44474E)
+val outlineLight = Color(0xFF74777F)
+val outlineVariantLight = Color(0xFFC4C6D0)
+val scrimLight = Color(0xFF000000)
+val inverseSurfaceLight = Color(0xFF2E3036)
+val inverseOnSurfaceLight = Color(0xFFF0F0F7)
+val inversePrimaryLight = Color(0xFFAAC7FF)
+val surfaceDimLight = Color(0xFFD9D9E0)
+val surfaceBrightLight = Color(0xFFF9F9FF)
+val surfaceContainerLowestLight = Color(0xFFFFFFFF)
+val surfaceContainerLowLight = Color(0xFFF3F3FA)
+val surfaceContainerLight = Color(0xFFEDEDF4)
+val surfaceContainerHighLight = Color(0xFFE7E8EE)
+val surfaceContainerHighestLight = Color(0xFFE2E2E9)
 
 
 
-// under development
-internal val White = Color(0xFFFAFAFC)
-internal val Black = Color(0xFF09090A)
 
-internal val Gray = ColorShades(
-    extraLight = Color(0xFFEBEBF0),
-    light = Color(0xFFCBCBD6),
-    kindaLight = Color(0xFFA0A0A7),
-    primary = Color(0xFF74747A),
-    kindaDark = Color(0xFF515155),
-    dark = Color(0xFF303033),
-    extraDark = Color(0xFF1C1C1F),
-)
-
-internal val Orange = ColorShades(
-    extraLight = Color(0xFFF5C4AB),
-    light = Color(0xFFF5AB87),
-    kindaLight = Color(0xFFF59362),
-    primary = Color(0xFFF57A3D),
-    kindaDark = Color(0xFFCC6633),
-    dark = Color(0xFF8F4724),
-    extraDark = Color(0xFF522914),
-)
-
-internal val Purple = ColorShades(
-    extraLight = Color(0xFFC6BCF5),
-    light = Color(0xFF9987F5),
-    kindaLight = Color(0xFF7B62F5),
-    primary = Color(0xFF5C3DF5),
-    kindaDark = Color(0xFF4D33CC),
-    dark = Color(0xFF36248F),
-    extraDark = Color(0xFF1F1452),
-)
-
-internal val Red = ColorShades(
-    extraLight = Color(0xFFF5ABAB),
-    light = Color(0xFFF5AB87),
-    kindaLight = Color(0xFFF56262),
-    primary = Color(0xFFF53D3D),
-    kindaDark = Color(0xFFCC3333),
-    dark = Color(0xFF8F2424),
-    extraDark = Color(0xFF521414),
-)
-
-internal val Yellow = ColorShades(
-    extraLight = Color(0xFFF5E9AB),
-    light = Color(0xFFF5E287),
-    kindaLight = Color(0xFFF5DC62),
-    primary = Color(0xFFF5D018),
-    kindaDark = Color(0xFFCCAD14),
-    dark = Color(0xFFA38B10),
-    extraDark = Color(0xFF7A680C),
-)
-
-internal val Green = ColorShades(
-    extraLight = Color(0xFFABF5DC),
-    light = Color(0xFF5AE0B4),
-    kindaLight = Color(0xFF38E0A8),
-    primary = Color(0xFF12B880),
-    kindaDark = Color(0xFF10A372),
-    dark = Color(0xFF0C7A56),
-    extraDark = Color(0xFF085239),
-)
-
-internal val Blue = ColorShades(
-    extraLight = Color(0xFFABD0F5),
-    light = Color(0xFF87BEF5),
-    kindaLight = Color(0xFF62ABF5),
-    primary = Color(0xFF3193F5),
-    kindaDark = Color(0xFF3380CC),
-    dark = Color(0xFF24598F),
-    extraDark = Color(0xFF153352),
-)
-
-internal val Pink = ColorShades(
-    extraLight = Color(0xFFF5ABD0),
-    light = Color(0xFFF587BE),
-    kindaLight = Color(0xFFF562AB),
-    primary = Color(0xFFF53D99),
-    kindaDark = Color(0xFFCC3380),
-    dark = Color(0xFF8F2459),
-    extraDark = Color(0xFF521433),
-)
+val primaryDark = Color(0xFFAAC7FF)
+val onPrimaryDark = Color(0xFF0A305F)
+val primaryContainerDark = Color(0xFF284777)
+val onPrimaryContainerDark = Color(0xFFD6E3FF)
+val secondaryDark = Color(0xFFBEC6DC)
+val onSecondaryDark = Color(0xFF283141)
+val secondaryContainerDark = Color(0xFF3E4759)
+val onSecondaryContainerDark = Color(0xFFDAE2F9)
+val tertiaryDark = Color(0xFFDDBCE0)
+val onTertiaryDark = Color(0xFF3F2844)
+val tertiaryContainerDark = Color(0xFF573E5C)
+val onTertiaryContainerDark = Color(0xFFFAD8FD)
+val errorDark = Color(0xFFFFB4AB)
+val onErrorDark = Color(0xFF690005)
+val errorContainerDark = Color(0xFF93000A)
+val onErrorContainerDark = Color(0xFFFFDAD6)
+val backgroundDark = Color(0xFF111318)
+val onBackgroundDark = Color(0xFFE2E2E9)
+val surfaceDark = Color(0xFF111318)
+val onSurfaceDark = Color(0xFFE2E2E9)
+val surfaceVariantDark = Color(0xFF44474E)
+val onSurfaceVariantDark = Color(0xFFC4C6D0)
+val outlineDark = Color(0xFF8E9099)
+val outlineVariantDark = Color(0xFF44474E)
+val scrimDark = Color(0xFF000000)
+val inverseSurfaceDark = Color(0xFFE2E2E9)
+val inverseOnSurfaceDark = Color(0xFF2E3036)
+val inversePrimaryDark = Color(0xFF415F91)
+val surfaceDimDark = Color(0xFF111318)
+val surfaceBrightDark = Color(0xFF37393E)
+val surfaceContainerLowestDark = Color(0xFF0C0E13)
+val surfaceContainerLowDark = Color(0xFF191C20)
+val surfaceContainerDark = Color(0xFF1D2024)
+val surfaceContainerHighDark = Color(0xFF282A2F)
+val surfaceContainerHighestDark = Color(0xFF33353A)

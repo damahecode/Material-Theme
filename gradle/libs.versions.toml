@@ -4,26 +4,28 @@ compileSdk = "34"
 minSdk = "24"
 targetSdk = "34"
 # https://developer.android.com/jetpack/androidx/releases/compose-compiler
-kotlinCompilerExtensionVersion = "1.5.8"
-agp = "8.2.2"
-kotlin = "1.9.22"
-dagger-hilt = "2.50"
-ksp = "1.9.22-1.0.16"
+kotlinCompilerExtensionVersion = "1.5.14"
+agp = "8.4.1"
+kotlin = "1.9.24"
+ksp = "1.9.24-1.0.20"
+dagger-hilt = "2.51.1"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
-activity-compose = "1.8.2"
+activity-compose = "1.9.0"
 accompanist-systemuicontroller = "0.28.0"
 core-splashscreen = "1.0.1"
-datastore-preferences = "1.0.0"
-hilt-navigation-compose = "1.1.0"
-hilt-android = "2.50"
+datastore-preferences = "1.1.1"
+hilt-navigation-compose = "1.2.0"
 lifecycle-runtime-compose = "2.7.0"
 lifecycle-viewmodel-compose = "2.7.0"
-compose-material3 = "1.1.2"
-compose-ui-tooling-preview = "1.6.0"
+compose-material3 = "1.2.1"
+compose-ui-tooling-preview = "1.6.7"
 
 [libraries]
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 accompanist-systemuicontroller = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanist-systemuicontroller" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "core-splashscreen" }
@@ -35,11 +37,9 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose-ui-tooling-preview" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose-ui-tooling-preview" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "compose-ui-tooling-preview" }
-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt-android" }
-hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt-android" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger-hilt" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "dagger-hilt" }
+
 # Other way to implementation (example)
 # androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
 # androidx-activity-compose = "androidx.activity:activity-compose:1.7.1"
