@@ -1,15 +1,15 @@
 <!-- MARKDOWN LINKS -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/damahecode/DayNight-Theme.svg?style=for-the-badge
-[contributors-url]: https://github.com/damahecode/DayNight-Theme/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/damahecode/DayNight-Theme.svg?style=for-the-badge
-[forks-url]: https://github.com/damahecode/DayNight-Theme/network/members
-[stars-shield]: https://img.shields.io/github/stars/damahecode/DayNight-Theme.svg?style=for-the-badge
-[stars-url]: https://github.com/damahecode/DayNight-Theme/stargazers
-[issues-shield]: https://img.shields.io/github/issues/damahecode/DayNight-Theme.svg?style=for-the-badge
-[issues-url]: https://github.com/damahecode/DayNight-Theme/issues
-[license-shield]: https://img.shields.io/github/license/damahecode/DayNight-Theme.svg?style=for-the-badge
-[license-url]: https://github.com/damahecode/DayNight-Theme/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/damahecode/Material-Theme.svg?style=for-the-badge
+[contributors-url]: https://github.com/damahecode/Material-Theme/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/damahecode/Material-Theme.svg?style=for-the-badge
+[forks-url]: https://github.com/damahecode/Material-Theme/network/members
+[stars-shield]: https://img.shields.io/github/stars/damahecode/Material-Theme.svg?style=for-the-badge
+[stars-url]: https://github.com/damahecode/Material-Theme/stargazers
+[issues-shield]: https://img.shields.io/github/issues/damahecode/Material-Theme.svg?style=for-the-badge
+[issues-url]: https://github.com/damahecode/Material-Theme/issues
+[license-shield]: https://img.shields.io/github/license/damahecode/Material-Theme.svg?style=for-the-badge
+[license-url]: https://github.com/damahecode/Material-Theme/blob/master/LICENSE
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -17,7 +17,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
-# Material Theme by Damahe Code
+# Material Theme
 A Material Design-based Theme Management System for Android Jetpack Compose.
 
 ## Requirements
