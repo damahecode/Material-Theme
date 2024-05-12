@@ -18,15 +18,19 @@
 
 package com.code.damahe.activity
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import com.code.damahe.app.Activity
 import com.code.damahe.app.MainContent
+import com.code.damahe.material.theme.DCodeAppTheme
 import com.code.damahe.material.viewmodel.ThemeUiState.Loading
 import com.code.damahe.material.viewmodel.ThemeUiState.Success
-import com.code.damahe.screen.NavMainScreen
+import com.code.damahe.screen.MainScreen
 
 class MainActivity : Activity() {
 
@@ -41,7 +45,6 @@ class MainActivity : Activity() {
             when (themeUiState) {
                 Loading -> true
                 is Success -> false
-                else -> false
             }
         }
 
@@ -51,19 +54,21 @@ class MainActivity : Activity() {
 
         setContent {
             MainContent(themeUiState = themeUiState) {
-                NavMainScreen()
+                MainScreen()
             }
         }
     }
 }
 
 
-//@Preview(
-//    showSystemUi = true,
-//    uiMode = Configuration.UI_MODE_NIGHT_NO,
-//    showBackground = true,
-//)
-//@Composable
-//fun PreviewScreen() {
-//
-//}
+@Preview(
+    showSystemUi = true,
+    uiMode = Configuration.UI_MODE_NIGHT_NO,
+    showBackground = true,
+)
+@Composable
+fun PreviewScreen() {
+  DCodeAppTheme {
+      MainScreen()
+  }
+}

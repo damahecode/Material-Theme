@@ -28,6 +28,11 @@ enum class ThemeBrand {
 
 object ThemeConfig {
 
+    const val LIBRARY_NAME = "Material-Theme"
+    const val MATERIAL_THEME_GITHUB = "https://github.com/damahecode/Material-Theme"
+    const val DEVELOPER = "damahecode.com"
+    const val DEVELOPER_URL = "https://damahecode.com"
+
     object PrefTheme {
         const val PREFERENCE_DATA_STORE = "Material_Theme"
 
@@ -42,7 +47,7 @@ object ThemeConfig {
         const val DARK_THEME_LIGHT = 1
         const val DARK_THEME_DARK = 2
 
-        const val MATERIAL_THEME_GITHUB = "https://github.com/damahecode/Material-Theme"
-        const val DAMAHECODE_GITHUB = "https://github.com/damahecode"
+
+
     }
 }

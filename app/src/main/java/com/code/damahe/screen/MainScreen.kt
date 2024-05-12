@@ -21,24 +21,21 @@ package com.code.damahe.screen
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.consumeWindowInsets
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -53,7 +50,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.code.damahe.res.R
@@ -63,16 +59,15 @@ import com.code.damahe.material.theme.DCodeBackground
 import com.code.damahe.material.theme.DCodeGradientBackground
 import com.code.damahe.material.dialogs.ThemeDialog
 import com.code.damahe.material.model.ThemeString
-import com.code.damahe.material.theme.DCodeAppTheme
 import com.code.damahe.material.theme.GradientColors
 import com.code.damahe.material.theme.LocalGradientColors
+import com.code.damahe.res.icon.DrawIcon
 
 @OptIn(
-    ExperimentalLayoutApi::class,
     ExperimentalMaterial3Api::class
 )
 @Composable
-fun NavMainScreen() {
+fun MainScreen() {
 
     val context = LocalContext.current
 
@@ -84,7 +79,7 @@ fun NavMainScreen() {
             string = ThemeString(R.string.title_app_theme, R.string.loading, R.string.ok, R.string.brand_default,
                 R.string.brand_dynamic, R.string.gradient_colors_preference, R.string.gradient_colors_yes,
                 R.string.gradient_colors_no, R.string.dark_mode_preference, R.string.dark_mode_config_system_default,
-                R.string.dark_mode_config_light, R.string.dark_mode_config_dark, R.string.txt_material_theme, R.string.txt_Damahe_Code),
+                R.string.dark_mode_config_light, R.string.dark_mode_config_dark),
             onDismiss = {showThemeSettingsDialog.value = false},
         )
     }
@@ -107,7 +102,7 @@ fun NavMainScreen() {
                         navigationIcon = {
                             IconButton(onClick = { showThemeSettingsDialog.value = true }
                             ) {
-                                Icon(ImageVectorIcon(MyIcons.Settings).imageVector, contentDescription = stringResource(id = R.string.txt_preferences))
+                                DrawIcon(icon = ImageVectorIcon(MyIcons.Settings), contentDescription = stringResource(id = R.string.txt_preferences))
                             }
                         },
                         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
@@ -116,7 +111,7 @@ fun NavMainScreen() {
                     )
                 },
             ) { padding ->
-                Row(
+                Box(
                     Modifier
                         .fillMaxSize()
                         .padding(padding)
@@ -130,8 +125,7 @@ fun NavMainScreen() {
                     Column(
                         modifier = Modifier
                             .fillMaxSize()
-                            .fillMaxHeight()
-                            .fillMaxWidth()
+                            .systemBarsPadding()
                             .padding(5.dp),
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center
@@ -142,7 +136,7 @@ fun NavMainScreen() {
                         Button(onClick = {
                             val urlIntent = Intent(
                                 Intent.ACTION_VIEW,
-                                Uri.parse("https://github.com/damahecode/DayNight-Theme")
+                                Uri.parse("https://github.com/damahecode/Material-Theme")
                             )
                             context.startActivity(urlIntent)
                         }) {
@@ -156,16 +150,5 @@ fun NavMainScreen() {
                 }
             }
         }
-    }
-}
-
-
-@Preview(
-    showBackground = true
-)
-@Composable
-fun DefaultPreview() {
-    DCodeAppTheme {
-        NavMainScreen()
     }
 }

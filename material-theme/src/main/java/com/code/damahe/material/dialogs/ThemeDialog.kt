@@ -23,7 +23,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
@@ -50,8 +49,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.code.damahe.material.config.DarkThemeConfig
 import com.code.damahe.material.config.ThemeBrand
-import com.code.damahe.material.config.ThemeConfig.PrefTheme.DAMAHECODE_GITHUB
-import com.code.damahe.material.config.ThemeConfig.PrefTheme.MATERIAL_THEME_GITHUB
+import com.code.damahe.material.config.ThemeConfig.DEVELOPER
+import com.code.damahe.material.config.ThemeConfig.DEVELOPER_URL
+import com.code.damahe.material.config.ThemeConfig.LIBRARY_NAME
+import com.code.damahe.material.config.ThemeConfig.MATERIAL_THEME_GITHUB
 import com.code.damahe.material.model.ThemeString
 import com.code.damahe.material.model.UserEditableTheme
 import com.code.damahe.material.theme.supportsDynamicTheming
@@ -238,13 +239,13 @@ private fun LinksPanel(string: ThemeString) {
         ) {
             Row {
                 TextLink(
-                    text = stringResource(string.materialTheme),
+                    text = LIBRARY_NAME,
                     url = MATERIAL_THEME_GITHUB,
                 )
                 Spacer(Modifier.width(16.dp))
                 TextLink(
-                    text = stringResource(string.damahecode),
-                    url = DAMAHECODE_GITHUB,
+                    text = DEVELOPER,
+                    url = DEVELOPER_URL,
                 )
             }
         }

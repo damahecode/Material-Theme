@@ -33,6 +33,4 @@ data class ThemeString(
     @StringRes val systemDefault: Int,
     @StringRes val configLight: Int,
     @StringRes val configDark: Int,
-    @StringRes val materialTheme: Int,
-    @StringRes val damahecode: Int,
 )
