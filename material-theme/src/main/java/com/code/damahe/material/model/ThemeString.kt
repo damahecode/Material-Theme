@@ -18,19 +18,19 @@
 
 package com.code.damahe.material.model
 
-import androidx.annotation.StringRes
+import com.code.damahe.material.app.ThemeConfig
 
 data class ThemeString(
-    @StringRes val title: Int,
-    @StringRes val loading: Int,
-    @StringRes val ok: Int,
-    @StringRes val brandDefault: Int,
-    @StringRes val brandDynamic: Int,
-    @StringRes val useGradientColors: Int,
-    @StringRes val yes: Int,
-    @StringRes val no: Int,
-    @StringRes val darkModePreference: Int,
-    @StringRes val systemDefault: Int,
-    @StringRes val configLight: Int,
-    @StringRes val configDark: Int,
+    val title: String = ThemeConfig.TITLE,
+    val loading: String = ThemeConfig.LOADING,
+    val ok: String = ThemeConfig.OK,
+    val brandDefault: String = ThemeConfig.BRAND_DEFAULT,
+    val brandDynamic: String = ThemeConfig.BRAND_DYNAMIC,
+    val useGradientColors: String = ThemeConfig.USE_GRADIENT_COLORS,
+    val yes: String = ThemeConfig.YES,
+    val no: String = ThemeConfig.NO,
+    val darkModePreference: String = ThemeConfig.DARK_MODE_PREFERENCE,
+    val systemDefault: String = ThemeConfig.SYSTEM_DEFAULT,
+    val light: String = ThemeConfig.LIGHT,
+    val dark: String = ThemeConfig.DARK,
 )

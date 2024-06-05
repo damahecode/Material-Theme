@@ -16,7 +16,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-package com.code.damahe.material.config
+package com.code.damahe.material.app
 
 enum class DarkThemeConfig {
     FOLLOW_SYSTEM, LIGHT, DARK
@@ -30,8 +30,21 @@ object ThemeConfig {
 
     const val LIBRARY_NAME = "Material-Theme"
     const val MATERIAL_THEME_GITHUB = "https://github.com/damahecode/Material-Theme"
-    const val DEVELOPER = "damahecode.com"
+    const val DEVELOPER = "damahecode.com/"
     const val DEVELOPER_URL = "https://damahecode.com"
+    // Theme String
+    const val TITLE = "App Theme"
+    const val LOADING = "Loading…"
+    const val OK = "OK"
+    const val BRAND_DEFAULT = "Default"
+    const val BRAND_DYNAMIC = "Dynamic"
+    const val USE_GRADIENT_COLORS = "Use Gradient Colors"
+    const val YES = "Yes"
+    const val NO = "No"
+    const val DARK_MODE_PREFERENCE = "Dark mode preference"
+    const val SYSTEM_DEFAULT = "System default"
+    const val LIGHT = "Light"
+    const val DARK = "Dark"
 
     object PrefTheme {
         const val PREFERENCE_DATA_STORE = "Material_Theme"
