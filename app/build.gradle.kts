@@ -31,8 +31,8 @@ android {
         applicationId = "com.code.damahe.material.theme"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
-        versionCode = 500
-        versionName = "5.0.0"
+        versionCode = 501
+        versionName = "5.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
