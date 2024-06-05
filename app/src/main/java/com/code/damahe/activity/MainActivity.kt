@@ -25,14 +25,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
-import com.code.damahe.app.Activity
-import com.code.damahe.app.MainContent
+import com.code.damahe.material.app.DCodeActivity
+import com.code.damahe.material.app.MainContent
 import com.code.damahe.material.theme.DCodeAppTheme
 import com.code.damahe.material.viewmodel.ThemeUiState.Loading
 import com.code.damahe.material.viewmodel.ThemeUiState.Success
 import com.code.damahe.screen.MainScreen
 
-class MainActivity : Activity() {
+class MainActivity : DCodeActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val splashScreen = installSplashScreen()
