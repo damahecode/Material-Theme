@@ -16,7 +16,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-package com.code.damahe.app
+package com.code.damahe.material.app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -40,7 +40,7 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-abstract class Activity : ComponentActivity() {
+abstract class DCodeActivity : ComponentActivity() {
 
     private val viewModel: ThemeViewModel by viewModels()
     protected var themeUiState: ThemeUiState by mutableStateOf(ThemeUiState.Loading)
@@ -62,6 +62,11 @@ abstract class Activity : ComponentActivity() {
 
 /**
  * Your Main Composable Function here
+ * ```
+ * setContent {
+ *     MainContent()
+ * }
+ * ```
  */
 @Composable
 fun MainContent(themeUiState: ThemeUiState, content: @Composable () -> Unit) {
