@@ -6,7 +6,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
 /**
- * Damahe Code typography.
+ * Material Theme typography.
  */
 internal val DCodeTypography = Typography(
     displayLarge = TextStyle(

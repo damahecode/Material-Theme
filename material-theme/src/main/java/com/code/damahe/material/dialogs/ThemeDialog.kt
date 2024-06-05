@@ -31,7 +31,7 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
@@ -41,18 +41,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalUriHandler
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.code.damahe.material.config.DarkThemeConfig
-import com.code.damahe.material.config.ThemeBrand
-import com.code.damahe.material.config.ThemeConfig.DEVELOPER
-import com.code.damahe.material.config.ThemeConfig.DEVELOPER_URL
-import com.code.damahe.material.config.ThemeConfig.LIBRARY_NAME
-import com.code.damahe.material.config.ThemeConfig.MATERIAL_THEME_GITHUB
+import com.code.damahe.material.app.DarkThemeConfig
+import com.code.damahe.material.app.ThemeBrand
+import com.code.damahe.material.app.ThemeConfig.DEVELOPER
+import com.code.damahe.material.app.ThemeConfig.DEVELOPER_URL
+import com.code.damahe.material.app.ThemeConfig.LIBRARY_NAME
+import com.code.damahe.material.app.ThemeConfig.MATERIAL_THEME_GITHUB
 import com.code.damahe.material.model.ThemeString
 import com.code.damahe.material.model.UserEditableTheme
 import com.code.damahe.material.theme.supportsDynamicTheming
@@ -61,7 +60,7 @@ import com.code.damahe.material.viewmodel.ThemeUiState
 
 @Composable
 fun ThemeDialog(
-    string: ThemeString,
+    string: ThemeString = ThemeString(),
     onDismiss: () -> Unit,
     viewModel: ThemeViewModel = hiltViewModel()
 ) {
@@ -94,17 +93,17 @@ fun ThemeDialog(
         onDismissRequest = { onDismiss() },
         title = {
             Text(
-                text = stringResource(string.title),
+                text = string.title,
                 style = MaterialTheme.typography.titleLarge,
             )
         },
         text = {
-            Divider()
             Column(Modifier.verticalScroll(rememberScrollState())) {
+                HorizontalDivider()
                 when (themeUiState) {
                     ThemeUiState.Loading -> {
                         Text(
-                            text = stringResource(string.loading),
+                            text = string.loading,
                             modifier = Modifier.padding(vertical = 16.dp),
                         )
                     }
@@ -119,14 +118,13 @@ fun ThemeDialog(
                         )
                     }
                 }
-                Divider(Modifier.padding(top = 8.dp))
-                LinksPanel(string)
+                HorizontalDivider(Modifier.padding(top = 8.dp))
+                LinksPanel()
             }
-            //TrackScreenViewEvent(screenName = "Settings")
         },
         confirmButton = {
             Text(
-                text = stringResource(id = string.ok),
+                text = string.ok,
                 style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.primary,
                 modifier = Modifier
@@ -148,45 +146,45 @@ private fun ThemePanel(
 ) {
     Column(Modifier.selectableGroup()) {
         DialogThemeChooserRow(
-            text = stringResource(string.brandDefault),
+            text = string.brandDefault,
             selected = theme.themeBrand == ThemeBrand.DEFAULT,
             onClick = { onChangeThemeBrand(ThemeBrand.DEFAULT) },
         )
         if (supportDynamicColor) {
             DialogThemeChooserRow(
-                text = stringResource(string.brandDynamic),
+                text = string.brandDynamic,
                 selected = theme.themeBrand == ThemeBrand.DYNAMIC,
                 onClick = { onChangeThemeBrand(ThemeBrand.DYNAMIC) },
             )
         }
     }
-    ThemeDialogSectionTitle(text = stringResource(string.useGradientColors))
+    ThemeDialogSectionTitle(text = string.useGradientColors)
     Column(Modifier.selectableGroup()) {
         DialogThemeChooserRow(
-            text = stringResource(string.yes),
+            text = string.yes,
             selected = theme.useGradientColors,
             onClick = { onChangeGradientColorsPreference(true) },
         )
         DialogThemeChooserRow(
-            text = stringResource(string.no),
+            text = string.no,
             selected = !theme.useGradientColors,
             onClick = { onChangeGradientColorsPreference(false) },
         )
     }
-    ThemeDialogSectionTitle(text = stringResource(string.darkModePreference))
+    ThemeDialogSectionTitle(text = string.darkModePreference)
     Column(Modifier.selectableGroup()) {
         DialogThemeChooserRow(
-            text = stringResource(string.systemDefault),
+            text = string.systemDefault,
             selected = theme.darkThemeConfig == DarkThemeConfig.FOLLOW_SYSTEM,
             onClick = { onChangeDarkThemeConfig(DarkThemeConfig.FOLLOW_SYSTEM) },
         )
         DialogThemeChooserRow(
-            text = stringResource(string.configLight),
+            text = string.light,
             selected = theme.darkThemeConfig == DarkThemeConfig.LIGHT,
             onClick = { onChangeDarkThemeConfig(DarkThemeConfig.LIGHT) },
         )
         DialogThemeChooserRow(
-            text = stringResource(string.configDark),
+            text = string.dark,
             selected = theme.darkThemeConfig == DarkThemeConfig.DARK,
             onClick = { onChangeDarkThemeConfig(DarkThemeConfig.DARK) },
         )
@@ -229,7 +227,7 @@ fun DialogThemeChooserRow(
 }
 
 @Composable
-private fun LinksPanel(string: ThemeString) {
+private fun LinksPanel() {
     Row(
         modifier = Modifier.padding(top = 16.dp),
     ) {
@@ -239,13 +237,13 @@ private fun LinksPanel(string: ThemeString) {
         ) {
             Row {
                 TextLink(
-                    text = LIBRARY_NAME,
-                    url = MATERIAL_THEME_GITHUB,
-                )
-                Spacer(Modifier.width(16.dp))
-                TextLink(
                     text = DEVELOPER,
                     url = DEVELOPER_URL,
+                )
+                Spacer(Modifier.width(8.dp))
+                TextLink(
+                    text = LIBRARY_NAME,
+                    url = MATERIAL_THEME_GITHUB,
                 )
             }
         }

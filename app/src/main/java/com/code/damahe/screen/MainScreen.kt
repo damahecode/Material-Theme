@@ -58,7 +58,6 @@ import com.code.damahe.res.icon.MyIcons
 import com.code.damahe.material.theme.DCodeBackground
 import com.code.damahe.material.theme.DCodeGradientBackground
 import com.code.damahe.material.dialogs.ThemeDialog
-import com.code.damahe.material.model.ThemeString
 import com.code.damahe.material.theme.GradientColors
 import com.code.damahe.material.theme.LocalGradientColors
 import com.code.damahe.res.icon.DrawIcon
@@ -76,10 +75,6 @@ fun MainScreen() {
 
     if (showThemeSettingsDialog.value) {
         ThemeDialog(
-            string = ThemeString(R.string.title_app_theme, R.string.loading, R.string.ok, R.string.brand_default,
-                R.string.brand_dynamic, R.string.gradient_colors_preference, R.string.gradient_colors_yes,
-                R.string.gradient_colors_no, R.string.dark_mode_preference, R.string.dark_mode_config_system_default,
-                R.string.dark_mode_config_light, R.string.dark_mode_config_dark),
             onDismiss = {showThemeSettingsDialog.value = false},
         )
     }
@@ -95,7 +90,7 @@ fun MainScreen() {
             Scaffold(
                 containerColor = Color.Transparent,
                 contentColor = MaterialTheme.colorScheme.onBackground,
-                contentWindowInsets = WindowInsets(0, 0, 0, 0),
+                contentWindowInsets = WindowInsets(0),
                 topBar = {
                     TopAppBar(
                         title = { Text(text = stringResource(id = R.string.app_name)) },
