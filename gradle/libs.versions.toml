@@ -22,6 +22,7 @@ lifecycle-viewmodel-compose = "2.7.0"
 compose-material3 = "1.2.1"
 compose-ui-tooling-preview = "1.6.7"
 
+
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
