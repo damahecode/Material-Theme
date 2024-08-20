@@ -50,11 +50,6 @@ dependencies {
     implementation(project(":material-theme"))
     implementation(project(":core:system"))
 
-    implementation(libs.constraintlayout.compose)
-    implementation(libs.androidx.window)
     implementation(libs.androidx.hilt.navigation.compose)
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.accompanist.adaptive)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.compose.material3.window.size)
 }
