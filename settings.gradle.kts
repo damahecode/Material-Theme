@@ -18,3 +18,5 @@ rootProject.name = "Material Theme"
 include ("app")
 include(":core:resource")
 include(":material-theme")
+include(":core:system")
+include(":core:ui")
