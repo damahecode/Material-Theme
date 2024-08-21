@@ -24,6 +24,7 @@ datastore-preferences = "1.1.1"
 hilt-navigation-compose = "1.2.0"
 compose-material3 = "1.2.1"
 compose-ui-tooling-preview = "1.6.8"
+lottie = "6.4.0"
 
 
 [libraries]
@@ -43,6 +44,7 @@ androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "compose-ui-tooling-preview" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger-hilt" }
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "dagger-hilt" }
+lottie = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie"}
 
 # Other way to implementation (example)
 # androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
