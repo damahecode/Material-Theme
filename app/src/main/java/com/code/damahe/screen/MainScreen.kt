@@ -53,7 +53,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.code.damahe.res.R
-import com.code.damahe.res.icon.DCodeIcon.ImageVectorIcon
+import com.code.damahe.res.icon.DCodeResource.VectorResource
 import com.code.damahe.res.icon.MyIcons
 import com.code.damahe.material.theme.DCodeBackground
 import com.code.damahe.material.theme.DCodeGradientBackground
@@ -97,7 +97,7 @@ fun MainScreen() {
                         navigationIcon = {
                             IconButton(onClick = { showThemeSettingsDialog.value = true }
                             ) {
-                                DrawIcon(icon = ImageVectorIcon(MyIcons.Settings), contentDescription = stringResource(id = R.string.txt_preferences))
+                                DrawIcon(icon = VectorResource(MyIcons.Settings), contentDescription = stringResource(id = R.string.txt_preferences))
                             }
                         },
                         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
