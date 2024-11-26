@@ -64,9 +64,13 @@ abstract class DCodeActivity : ComponentActivity() {
  * Your Main Composable Function here
  * ```
  * setContent {
- *     MainContent()
+ *     MainContent(themeUiState = themeUiState) {
+ *         MainScreen() // Your Screen
+ *     }
  * }
  * ```
+ * [themeUiState] is provided by [DCodeActivity]
+ *
  */
 @Composable
 fun MainContent(themeUiState: ThemeUiState, content: @Composable () -> Unit) {
