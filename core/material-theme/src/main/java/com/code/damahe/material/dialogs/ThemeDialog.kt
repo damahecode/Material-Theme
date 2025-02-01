@@ -35,8 +35,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
@@ -46,7 +45,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.code.damahe.material.app.DarkThemeConfig
+import com.code.damahe.material.app.ThemeType
 import com.code.damahe.material.app.ThemeBrand
 import com.code.damahe.material.app.ThemeConfig.DEVELOPER
 import com.code.damahe.material.app.ThemeConfig.DEVELOPER_URL
@@ -71,7 +70,7 @@ fun ThemeDialog(
         themeUiState = themeUiState,
         onChangeThemeBrand = viewModel::updateThemeBrand,
         onChangeGradientColorsPreference = viewModel::updateGradientColorsPreference,
-        onChangeDarkThemeConfig = viewModel::updateDarkThemeConfig,
+        onChangeThemeType = viewModel::updateThemeType,
     )
 }
 
@@ -83,7 +82,7 @@ fun ThemeDialog(
     onDismiss: () -> Unit,
     onChangeThemeBrand: (themeBrand: ThemeBrand) -> Unit,
     onChangeGradientColorsPreference: (useGradientColors: Boolean) -> Unit,
-    onChangeDarkThemeConfig: (darkThemeConfig: DarkThemeConfig) -> Unit,
+    onChangeThemeType: (themeType: ThemeType) -> Unit,
 ) {
     val configuration = LocalConfiguration.current
 
@@ -114,7 +113,7 @@ fun ThemeDialog(
                             supportDynamicColor = supportDynamicColor,
                             onChangeThemeBrand = onChangeThemeBrand,
                             onChangeGradientColorsPreference = onChangeGradientColorsPreference,
-                            onChangeDarkThemeConfig = onChangeDarkThemeConfig,
+                            onChangeThemeType = onChangeThemeType,
                         )
                     }
                 }
@@ -142,7 +141,7 @@ private fun ThemePanel(
     supportDynamicColor: Boolean,
     onChangeThemeBrand: (themeBrand: ThemeBrand) -> Unit,
     onChangeGradientColorsPreference: (useGradientColors: Boolean) -> Unit,
-    onChangeDarkThemeConfig: (darkThemeConfig: DarkThemeConfig) -> Unit,
+    onChangeThemeType: (themeType: ThemeType) -> Unit,
 ) {
     Column(Modifier.selectableGroup()) {
         DialogThemeChooserRow(
@@ -175,18 +174,18 @@ private fun ThemePanel(
     Column(Modifier.selectableGroup()) {
         DialogThemeChooserRow(
             text = string.systemDefault,
-            selected = theme.darkThemeConfig == DarkThemeConfig.FOLLOW_SYSTEM,
-            onClick = { onChangeDarkThemeConfig(DarkThemeConfig.FOLLOW_SYSTEM) },
+            selected = theme.themeType == ThemeType.FOLLOW_SYSTEM,
+            onClick = { onChangeThemeType(ThemeType.FOLLOW_SYSTEM) },
         )
         DialogThemeChooserRow(
             text = string.light,
-            selected = theme.darkThemeConfig == DarkThemeConfig.LIGHT,
-            onClick = { onChangeDarkThemeConfig(DarkThemeConfig.LIGHT) },
+            selected = theme.themeType == ThemeType.LIGHT,
+            onClick = { onChangeThemeType(ThemeType.LIGHT) },
         )
         DialogThemeChooserRow(
             text = string.dark,
-            selected = theme.darkThemeConfig == DarkThemeConfig.DARK,
-            onClick = { onChangeDarkThemeConfig(DarkThemeConfig.DARK) },
+            selected = theme.themeType == ThemeType.DARK,
+            onClick = { onChangeThemeType(ThemeType.DARK) },
         )
     }
 }
