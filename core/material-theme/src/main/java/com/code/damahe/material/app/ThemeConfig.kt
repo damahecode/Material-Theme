@@ -18,7 +18,7 @@
 
 package com.code.damahe.material.app
 
-enum class DarkThemeConfig {
+enum class ThemeType { // TODO: Change ThemeType name to ThemeMode
     FOLLOW_SYSTEM, LIGHT, DARK
 }
 
@@ -56,11 +56,8 @@ object ThemeConfig {
         const val THEME_BRAND_DEFAULT = 0
         const val THEME_BRAND_DYNAMIC = 1
 
-        const val DARK_THEME_FOLLOW_SYSTEM = 0
-        const val DARK_THEME_LIGHT = 1
-        const val DARK_THEME_DARK = 2
-
-
-
+        const val THEME_FOLLOW_SYSTEM = 0
+        const val THEME_LIGHT = 1
+        const val THEME_DARK = 2
     }
 }
