@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Allows us to override night specific attributes in the
+         values-night folder. -->
+    <style name="NightAdjusted.Theme.DCode" parent="android:Theme.Material.Light.NoActionBar"/>
+
+    <!-- The final theme we use -->
+    <style name="Theme.DCode.Material" parent="NightAdjusted.Theme.DCode">
+        <item name="android:forceDarkAllowed" tools:targetApi="29">false</item>
+    </style>
+
+</resources>
