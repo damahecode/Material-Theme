@@ -20,11 +20,12 @@ package com.code.damahe.material.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.code.damahe.material.app.DarkThemeConfig
+import com.code.damahe.material.app.ThemeType
 import com.code.damahe.material.app.ThemeBrand
 import com.code.damahe.material.data.ThemeDataRepository
 import com.code.damahe.material.model.UserEditableTheme
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -38,6 +39,8 @@ class ThemeViewModel @Inject constructor(
     private val themeDataRepository: ThemeDataRepository,
 ) : ViewModel() {
 
+    private val dispatcher: CoroutineDispatcher = Dispatchers.IO
+
     val themeUiState: StateFlow<ThemeUiState> = themeDataRepository.userEditableTheme.map {
         ThemeUiState.Success(it)
     }.stateIn(
@@ -47,19 +50,19 @@ class ThemeViewModel @Inject constructor(
     )
 
     fun updateThemeBrand(themeBrand: ThemeBrand) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(dispatcher) {
             themeDataRepository.setThemeBrand(themeBrand)
         }
     }
 
-    fun updateDarkThemeConfig(darkThemeConfig: DarkThemeConfig) {
-        viewModelScope.launch(Dispatchers.IO) {
-            themeDataRepository.setDarkThemeConfig(darkThemeConfig)
+    fun updateThemeType(themeType: ThemeType) {
+        viewModelScope.launch(dispatcher) {
+            themeDataRepository.setThemeType(themeType)
         }
     }
 
     fun updateGradientColorsPreference(useGradientColors: Boolean) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(dispatcher) {
             themeDataRepository.setGradientColorsPreference(useGradientColors)
         }
     }
