@@ -32,10 +32,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
-import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -53,14 +53,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.code.damahe.res.R
-import com.code.damahe.res.icon.DCodeResource.VectorResource
 import com.code.damahe.res.icon.MyIcons
 import com.code.damahe.material.theme.DCodeBackground
 import com.code.damahe.material.theme.DCodeGradientBackground
 import com.code.damahe.material.dialogs.ThemeDialog
 import com.code.damahe.material.theme.GradientColors
 import com.code.damahe.material.theme.LocalGradientColors
-import com.code.damahe.res.icon.DrawIcon
 
 @OptIn(
     ExperimentalMaterial3Api::class
@@ -90,14 +88,14 @@ fun MainScreen() {
             Scaffold(
                 containerColor = Color.Transparent,
                 contentColor = MaterialTheme.colorScheme.onBackground,
-                contentWindowInsets = WindowInsets(0),
+                contentWindowInsets = WindowInsets(0,0,0,0),
                 topBar = {
                     TopAppBar(
                         title = { Text(text = stringResource(id = R.string.app_name)) },
                         navigationIcon = {
                             IconButton(onClick = { showThemeSettingsDialog.value = true }
                             ) {
-                                DrawIcon(icon = VectorResource(MyIcons.Settings), contentDescription = stringResource(id = R.string.txt_preferences))
+                                Icon(imageVector = MyIcons.Settings, contentDescription = stringResource(id = R.string.txt_preferences))
                             }
                         },
                         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
@@ -120,7 +118,6 @@ fun MainScreen() {
                     Column(
                         modifier = Modifier
                             .fillMaxSize()
-                            .systemBarsPadding()
                             .padding(5.dp),
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center
