@@ -19,7 +19,7 @@
 package com.code.damahe.material.data
 
 import android.content.Context
-import com.code.damahe.material.app.DarkThemeConfig
+import com.code.damahe.material.app.ThemeType
 import com.code.damahe.material.app.ThemeBrand
 import com.code.damahe.material.utils.DataStoreManager
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -39,8 +39,8 @@ class ThemeDataRepository @Inject constructor(
         dataStoreManager.saveThemeBrandDataStore(themeBrand)
     }
 
-    suspend fun setDarkThemeConfig(darkThemeConfig: DarkThemeConfig) {
-        dataStoreManager.saveDarkThemeConfigDataStore(darkThemeConfig)
+    suspend fun setThemeType(themeType: ThemeType) {
+        dataStoreManager.saveThemeTypeDataStore(themeType)
     }
 
     suspend fun setGradientColorsPreference(useGradientColors: Boolean) {
