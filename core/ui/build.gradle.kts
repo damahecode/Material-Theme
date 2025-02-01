@@ -45,7 +45,7 @@ dependencies {
 
     implementation(project(":core:resource"))
     implementation(project(":material-theme"))
-    implementation(project(":core:system"))
+//    implementation(project(":core:system"))
 
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.compose.material3)
