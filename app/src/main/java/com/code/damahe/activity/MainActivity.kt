@@ -21,17 +21,24 @@ package com.code.damahe.activity
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.core.view.WindowCompat
 import com.code.damahe.material.app.DCodeActivity
-import com.code.damahe.material.app.MainContent
 import com.code.damahe.material.theme.DCodeAppTheme
 import com.code.damahe.material.viewmodel.ThemeUiState.Loading
 import com.code.damahe.material.viewmodel.ThemeUiState.Success
 import com.code.damahe.screen.MainScreen
 
+/**
+ * The main activity of the application.
+ *
+ * This activity serves as the entry point for the app and handles the initial setup,
+ * including the splash screen and the main UI content.
+ *
+ * It extends [DCodeActivity], which likely provides some base functionality for the app.
+ */
 class MainActivity : DCodeActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,8 +56,9 @@ class MainActivity : DCodeActivity() {
         }
 
         // Turn off the decor fitting system windows, which allows us to handle insets,
-        // including IME animations
-        WindowCompat.setDecorFitsSystemWindows(window, false)
+        // including IME animations, and go edge-to-edge
+        // This also sets up the initial system bar style based on the platform theme
+        enableEdgeToEdge()
 
         setContent {
             MainContent(themeUiState = themeUiState) {
