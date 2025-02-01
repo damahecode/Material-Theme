@@ -18,22 +18,22 @@
 
 package com.code.damahe.material.app
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.code.damahe.material.theme.DCodeAppTheme
 import com.code.damahe.material.utils.ThemeUtil
+import com.code.damahe.material.utils.ThemeUtil.darkScrim
+import com.code.damahe.material.utils.ThemeUtil.lightScrim
 import com.code.damahe.material.viewmodel.ThemeUiState
 import com.code.damahe.material.viewmodel.ThemeViewModel
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
@@ -51,43 +51,53 @@ abstract class DCodeActivity : ComponentActivity() {
         // Update the uiState
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.themeUiState.onEach {
-                    themeUiState = it
-                }
+                viewModel.themeUiState
+                    .onEach { themeUiState = it }
                     .collect()
             }
         }
     }
-}
 
-/**
- * Your Main Composable Function here
- * ```
- * setContent {
- *     MainContent(themeUiState = themeUiState) {
- *         MainScreen() // Your Screen
- *     }
- * }
- * ```
- * [themeUiState] is provided by [DCodeActivity]
- *
- */
-@Composable
-fun MainContent(themeUiState: ThemeUiState, content: @Composable () -> Unit) {
-    val systemUiController = rememberSystemUiController()
-    val darkTheme = ThemeUtil.shouldUseDarkTheme(themeUiState)
+    /**
+     * Your Main Composable Function here
+     * ```
+     * setContent {
+     *     MainContent(themeUiState = themeUiState) {
+     *         MainScreen() // Your Screen
+     *     }
+     * }
+     * ```
+     * [themeUiState] is provided by [DCodeActivity]
+     *
+     */
+    @Composable
+    fun MainContent(themeUiState: ThemeUiState, content: @Composable () -> Unit) {
+        val darkTheme = ThemeUtil.shouldUseDarkTheme(themeUiState)
 
-    // Update the dark content of the system bars to match the theme
-    DisposableEffect(systemUiController, darkTheme) {
-        systemUiController.systemBarsDarkContentEnabled = !darkTheme
-        onDispose {}
-    }
+        // Update the edge to edge configuration to match the theme
+        // This is the same parameters as the default enableEdgeToEdge call, but we manually
+        // resolve whether or not to show dark theme using uiState, since it can be different
+        // than the configuration's dark theme value based on the user preference.
+        DisposableEffect(darkTheme) {
+            enableEdgeToEdge(
+                statusBarStyle = SystemBarStyle.auto(
+                    lightScrim = Color.TRANSPARENT,
+                    darkScrim = Color.TRANSPARENT,
+                ) { darkTheme },
+                navigationBarStyle = SystemBarStyle.auto(
+                    lightScrim = lightScrim,
+                    darkScrim = darkScrim,
+                ) { darkTheme },
+            )
+            onDispose {}
+        }
 
-    DCodeAppTheme(
-        darkTheme = darkTheme,
-        themeBrand = ThemeUtil.shouldUseOtherThemeBrand(themeUiState),
-        disableGradientColors = ThemeUtil.shouldDisableGradientColors(themeUiState),
-    ) {
-        content()
+        DCodeAppTheme(
+            darkTheme = darkTheme,
+            themeBrand = ThemeUtil.shouldUseOtherThemeBrand(themeUiState),
+            disableGradientColors = ThemeUtil.shouldDisableGradientColors(themeUiState),
+        ) {
+            content()
+        }
     }
 }
