@@ -81,9 +81,9 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 
     implementation(project(":core:resource"))
-    implementation(project(":material-theme"))
-    implementation(project(":core:system"))
-    implementation(project(":core:ui"))
+    implementation(project(":core:material-theme"))
+//    implementation(project(":core:system"))
+//    implementation(project(":core:ui"))
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.splashscreen)
