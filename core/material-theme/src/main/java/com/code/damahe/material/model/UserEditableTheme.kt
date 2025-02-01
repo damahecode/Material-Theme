@@ -18,7 +18,7 @@
 
 package com.code.damahe.material.model
 
-import com.code.damahe.material.app.DarkThemeConfig
+import com.code.damahe.material.app.ThemeType
 import com.code.damahe.material.app.ThemeBrand
 
 /**
@@ -26,6 +26,6 @@ import com.code.damahe.material.app.ThemeBrand
  */
 data class UserEditableTheme(
     val themeBrand: ThemeBrand,
-    val darkThemeConfig: DarkThemeConfig,
+    val themeType: ThemeType,
     val useGradientColors: Boolean,
 )
