@@ -19,7 +19,6 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
-    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -49,10 +48,6 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-
-    buildFeatures {
-        compose = true
-    }
 }
 
 dependencies {
@@ -61,9 +56,8 @@ dependencies {
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
-    implementation(project(":material-theme"))
+    implementation(project(":core:material-theme"))
 
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.lottie)
 }
