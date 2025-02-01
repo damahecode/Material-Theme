@@ -26,7 +26,7 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.code.damahe.material.app.ThemeConfig.PrefTheme
-import com.code.damahe.material.app.DarkThemeConfig
+import com.code.damahe.material.app.ThemeType
 import com.code.damahe.material.app.ThemeBrand
 import com.code.damahe.material.model.UserEditableTheme
 import kotlinx.coroutines.flow.map
@@ -47,12 +47,12 @@ class DataStoreManager(private val context: Context) {
                 PrefTheme.THEME_BRAND_DYNAMIC -> ThemeBrand.DYNAMIC
                 else -> ThemeBrand.DEFAULT
             },
-            darkThemeConfig = when (it[darkThemeKey]) {
-                PrefTheme.DARK_THEME_LIGHT -> DarkThemeConfig.LIGHT
-                PrefTheme.DARK_THEME_DARK -> DarkThemeConfig.DARK
-                else -> DarkThemeConfig.FOLLOW_SYSTEM
+            themeType = when (it[darkThemeKey]) {
+                PrefTheme.THEME_LIGHT -> ThemeType.LIGHT
+                PrefTheme.THEME_DARK -> ThemeType.DARK
+                else -> ThemeType.FOLLOW_SYSTEM
             },
-            useGradientColors = it[useGradientColorsKey] ?: true
+            useGradientColors = it[useGradientColorsKey] != false
         )
     }
 
@@ -65,12 +65,12 @@ class DataStoreManager(private val context: Context) {
         }
     }
 
-    suspend fun saveDarkThemeConfigDataStore(darkThemeConfig: DarkThemeConfig) {
+    suspend fun saveThemeTypeDataStore(themeType: ThemeType) {
         context.datastore.edit {
-            it[darkThemeKey] = when (darkThemeConfig) {
-                DarkThemeConfig.LIGHT -> PrefTheme.DARK_THEME_LIGHT
-                DarkThemeConfig.DARK -> PrefTheme.DARK_THEME_DARK
-                else -> PrefTheme.DARK_THEME_FOLLOW_SYSTEM
+            it[darkThemeKey] = when (themeType) {
+                ThemeType.LIGHT -> PrefTheme.THEME_LIGHT
+                ThemeType.DARK -> PrefTheme.THEME_DARK
+                else -> PrefTheme.THEME_FOLLOW_SYSTEM
             }
         }
     }
