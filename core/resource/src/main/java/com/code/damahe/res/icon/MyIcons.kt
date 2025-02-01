@@ -19,24 +19,12 @@
 package com.code.damahe.res.icon
 
 import androidx.annotation.DrawableRes
-import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Settings
-import androidx.compose.material3.Icon
-import androidx.compose.material3.LocalContentColor
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
-import com.airbnb.lottie.compose.LottieAnimation
-import com.airbnb.lottie.compose.LottieCompositionSpec
-import com.airbnb.lottie.compose.rememberLottieComposition
 
 /**
- * Damahe Code icons. Material icons are [ImageVector]s, custom icons are drawable resource IDs.
+ * App icons. Material icons are [ImageVector]s, custom icons are drawable resource IDs.
  */
 object MyIcons {
     val Settings = Icons.Rounded.Settings
@@ -48,45 +36,4 @@ object MyIcons {
 sealed class DCodeResource {
     data class VectorResource(val imageVector: ImageVector) : DCodeResource()
     data class DrawableResource(@DrawableRes val id: Int) : DCodeResource()
-}
-
-/**
- * A Material Design icon component that draws [DCodeResource] using [tint], with a default value of [LocalContentColor].
- */
-@Composable
-fun DrawIcon(
-    icon: DCodeResource,
-    contentDescription: String?,
-    modifier: Modifier = Modifier,
-    tint: Color = LocalContentColor.current
-) {
-    when (icon) {
-        is DCodeResource.VectorResource -> Icon(
-            imageVector = icon.imageVector,
-            contentDescription = contentDescription,
-            modifier = modifier,
-            tint = tint
-        )
-
-        is DCodeResource.DrawableResource -> Icon(
-            painter = painterResource(id = icon.id),
-            contentDescription = contentDescription,
-            modifier = modifier,
-            tint = tint
-        )
-    }
-}
-
-@Composable
-fun LottieLoadingView(
-    file: String,
-    modifier: Modifier = Modifier,
-    iterations: Int = 10
-) {
-    val composition by rememberLottieComposition(LottieCompositionSpec.Asset(file))
-    LottieAnimation(
-        composition,
-        modifier = modifier.defaultMinSize(300.dp),
-        iterations = iterations
-    )
 }
